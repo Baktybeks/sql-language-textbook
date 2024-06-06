@@ -22,8 +22,6 @@ const TheHeader = () => {
 							<>
 								<Link className={styles.textLink}
 									  href='/admin'>Профиль</Link>
-								<Link className={styles.textLink}
-									  href='/applications'>Заявки</Link>
 							</>
 						) : <Link className={styles.textLink}
 								  href='/profile'>Профиль</Link>
