@@ -11,8 +11,10 @@ const File = () => {
                 начинающих, так и для опытных пользователей, желающих улучшить свои знания и навыки.
             </p>
             <a
-                href="Book/book1.docx"
-                download="Бердалиев Атай Арстанбекович.docx"
+                href="/Book/SQL.pdf"
+                download="SQL"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.textLink}
             >
                 Скачать книгу
