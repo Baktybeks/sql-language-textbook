@@ -1,6 +1,13 @@
 .sliderReceipts {
+  display: flex;
+  flex-direction: row;
+
   .slick-arrow {
     display: none !important;
+  }
+
+  .slick-track {
+    width: auto !important;
   }
 
   .slick-list {
@@ -14,7 +21,7 @@
   .slick-slide {
     display: grid !important;
     place-items: flex-end;
-    width: 212px !important;
+    width: 500px !important;
     height: 445px;
     border-radius: 15px !important;
     margin-right: 30px;

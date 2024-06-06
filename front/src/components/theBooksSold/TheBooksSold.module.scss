@@ -1,75 +1,48 @@
-.blockComment {
-  width: 302px;
-  height: 350px;
-  border-radius: 16px;
-  border: 1px solid #FAFAFA;
-  padding: 16px;
-  background: #FFFFFF;
-}
-
-.blockHeader {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 57.6px;
+.nameHeadr {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 38.73px;
+  letter-spacing: 1.874286413192749px;
   text-align: center;
-  margin-bottom: 50px;
+  color: #444444;
 }
 
-.write {
- color: #E61C5D;
-}
-
-.userComments {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.userBlock {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  column-gap: 8px;
-}
-
-.userImg {
-  width: 80px;
-  height: 80px;
-  border-radius: 18px;
-}
-
-.infoUser {
+.listItem {
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  color: #fff;
+  height: 300px;
+  width: 590px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
-.name {
-  font-size: 18px;
+.blockList {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.nameTitle {
+  font-size: 22px;
   font-weight: 700;
-  line-height: 21.6px;
-  text-align: center;
-  color: #112B3C;
+  line-height: 29.96px;
+  letter-spacing: 1.8209048509597778px;
+  text-align: left;
+  color: #FFFFFF;
 }
 
-.works {
+.text {
   font-size: 14px;
   font-weight: 400;
-  line-height: 16.8px;
-  text-align: center;
-  color: #112B3C;
-}
-
-.textDesc {
-  width: 224px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18.62px;
-  text-align: center;
-  color: #112B3C;
+  line-height: 19.07px;
+  letter-spacing: 1.8209048509597778px;
+  text-align: left;
+  color: #FFFFFF;
 }

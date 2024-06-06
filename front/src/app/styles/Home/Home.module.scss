@@ -6,33 +6,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 135px;
+  padding: 0 100px;
 }
 
 .wrapperCriteria {
   width: 100%;
-  height: 700px;
-  padding: 0 135px;
+  padding: 0 100px;
 }
 
 .wrapperReceipts {
   margin: 80px 0;
-  padding: 0 112px;
+  padding: 0 100px;
 }
 
 .wrapperOffers {
-  padding: 80px 112px;
+  padding: 80px 100px;
   background: rgba(241, 89, 43, 0.2);
 }
 
 .wrapperBooksSold, .wrapperCollection {
   height: 500px;
-  padding: 42px 112px;
+  padding: 42px 100px;
   margin-bottom: 120px;
 }
 
 .wrapperCollection {
-  margin-bottom: 135px;
+  margin-bottom: 100px;
 }
 
 .wrapperComments {
@@ -40,6 +39,10 @@
 }
 
 .wrapperRequest {
+  height: auto;
+}
+
+.wrapperBooksSold {
   height: auto;
 }
 

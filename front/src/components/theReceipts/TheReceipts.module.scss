@@ -5,6 +5,17 @@
     text-align: left;
 }
 
+.sliderReceipts {
+    margin: 0 auto;
+}
+
+.blockAdd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .blockHeader {
     display: flex;
     flex-direction: row;
@@ -17,65 +28,68 @@
     cursor: grab;
 }
 
-.nameLocation {
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 16px;
-    margin: 8px 0;
-}
-
-.renovationBook {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 30px;
-    text-align: left;
-}
-
-.prise {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 30px;
-    color: #F1592B;
-}
-
-.write {
-    color: #E61C5D;
-}
-
 .imgesLocation {
-    width: 212px;
-    height: 330px;
+    width: 413px;
+    height: 602px;
+    border: 15px solid #FFFFFF
 }
 
-.textLocation {
-    margin-top: 23px;
+.nameBool {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 58.09px;
+    text-align: left;
+    color: #393280;
+    margin-bottom: 50px;
 }
 
-.blockButtons {
-    display: flex;
-    flex-direction: row;
-    column-gap: 10px;
+.author {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15.73px;
+    letter-spacing: 0.16em;
+    text-align: left;
+    color: #888888;
+    margin-bottom: 30px;
 }
 
-.buttonPrev, .buttonNext {
-    width: 50px;
-    height: 50px;
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.89px;
+    text-align: left;
+    color: #393280;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 33.28px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #7A7A7A;
+    margin: 16px 0 35px;
+}
+
+.price {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27.84px;
+    letter-spacing: 0.02em;
+    color: #ED553B;
+    margin-bottom: 100px;
+}
+
+.textLink {
     display: grid;
     place-items: center;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 100%;
-    cursor: pointer;
-}
-
-.buttonPrev {
-    transform: rotate(180deg);
-}
-
-.infoLocation {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    width: 133px;
+    height: 61px;
+    border-radius: 7px;
+    border: 1px solid #393280;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 35.2px;
+    letter-spacing: 0.1em;
+    color: #393280;
 }
