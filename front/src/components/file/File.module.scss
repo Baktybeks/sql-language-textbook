@@ -1,0 +1,39 @@
+.blockFile {
+  padding: 24px;
+  margin-bottom: 120px;
+  background: linear-gradient(75.42deg, #FBEEEE 11.08%, #F7FFFE 89.87%);
+}
+
+.nameHeader {
+  width: 800px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: left;
+  color: #393280;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 39.6px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: #393280CC;
+  margin-bottom: 50px;
+}
+
+.textLink {
+  display: grid;
+  place-items: center;
+  width: 133px;
+  height: 61px;
+  border-radius: 7px;
+  border: 1px solid #393280;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35.2px;
+  letter-spacing: 0.1em;
+  color: #393280;
+}
