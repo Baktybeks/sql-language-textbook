@@ -1,0 +1,70 @@
+@import "../../app/styles/mixin";
+
+.openWorld {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 24px;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+.nameHeader {
+  width: 681px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: left;
+  color: #393280;
+}
+
+.text {
+  width: 469px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: left;
+  color: rgba(128, 128, 128, 1);
+}
+
+.write {
+  color: #E61C5D;
+}
+
+.list {
+  display: flex;
+  column-gap: 24px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.blockList {
+  display: flex;
+  flex-direction: column;
+}
+
+.num {
+  width: 246px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+  color: #393280;
+  margin: 18px auto;
+}
+
+.strings {
+  width: 416px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+  color: #393280B2;
+}
