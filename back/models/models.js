@@ -32,7 +32,12 @@ const Application = sequelize.define('Application', {
   name: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false },
   processed: { type: DataTypes.BOOLEAN, defaultValue: false },
+  BookId: { type: DataTypes.INTEGER, allowNull: false },
 });
+
+Book.hasMany(Application, { as: 'Book', foreignKey: 'BookId' });
+Application.belongsTo(Book, { as: 'Book', foreignKey: 'BookId'});
+
 
 module.exports = {
   User, Application, Book, TrainingBlock
