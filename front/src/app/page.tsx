@@ -23,8 +23,6 @@ interface DataItem {
 
 const Home: React.FC = () => {
 	const [active, setActive] = useState<boolean>(false);
-	const [selectedOption, setSelectedOption] = useState<string>('');
-	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 	const [formData, setFormData] = useState<FormData>({});
 	const [data, setData] = useState<DataItem[]>([]);
 
