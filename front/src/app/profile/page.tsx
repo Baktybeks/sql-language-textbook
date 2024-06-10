@@ -8,7 +8,7 @@ const Profile = () => {
   const session = useSession();
 
   return (
-      <Layout>
+      <Layout Header='home'>
       <div className={styles.wrapperProfile}>
           {session?.data?.user?.image &&
               <img className={styles.imgProfile} src={session?.data?.user?.image} alt="image"/>
