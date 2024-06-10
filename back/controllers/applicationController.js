@@ -1,13 +1,13 @@
-const { Application } = require('../models/models');
+const { Application, Book } = require('../models/models');
 const ApiError = require('../error/ApiError');
 
 
 class ApplicationController {
   async create(req, res, next) {
     try {
-      const { name, email, processed } = req.body;
+      const { name, email, processed, BookId } = req.body;
       const data = await Application.create({
-        name, email, processed
+        name, email, processed, BookId
       });
       return res.json(data);
     } catch(e) {
@@ -20,7 +20,10 @@ class ApplicationController {
       order: [
         [ 'processed', 'ASC' ],
         [ 'createdAt', 'DESC' ]
-      ]
+      ],
+      include: [
+        { model: Book, as: 'Book', attributes: ['title', 'author', 'publication_year', 'description', 'price'] }
+      ],
     });
     return res.json(data);
   }
