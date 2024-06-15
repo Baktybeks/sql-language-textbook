@@ -22,7 +22,8 @@ interface DataItem {
 }
 
 const Home: React.FC = () => {
-	const [active, setActive] = useState<boolean>(false);
+	const [active, setActive] = useState(false);
+	const [idAplication, setIdAplication] = useState<number>(0);
 	const [formData, setFormData] = useState<FormData>({});
 	const [data, setData] = useState<DataItem[]>([]);
 
@@ -41,18 +42,10 @@ const Home: React.FC = () => {
 
 	return (
 		<Layout Header='home'>
-			<div
-				className={classNames(styles.shadow, { [styles.shadowNot]: !active })}
-				onClick={() => setActive(!active)}
-			></div>
-			<div className={classNames(styles.application, { [styles.applicationNot]: !active })}>
-				<TheAddAplication onActive={setActive} active={active} />
+			<div className={classNames(styles.shadow, {[styles.shadowNot]: !active})} onClick={() => setActive(!active)}></div>
+			<div className={classNames(styles.application, {[styles.applicationNot]: !active})}>
+				<TheAddAplication onActive={setActive} active={active} idAplication={idAplication}/>
 			</div>
-			{!formData ? (
-				<div>
-					<p>Form data matches an item in the fetched data!</p>
-				</div>
-			) : (
 				<>
 					<section className={styles.wrapperOpenWorld}>
 						<TheOpenWorld/>
@@ -61,13 +54,12 @@ const Home: React.FC = () => {
 						<TheCriteria />
 					</section>
 					<section className={styles.wrapperReceipts}>
-						<TheReceipts />
+						<TheReceipts setIdAplication={setIdAplication} onActive={setActive} active={active}/>
 					</section>
 					<section className={styles.wrapperBooksSold}>
 						<TheBooksSold />
 					</section>
 				</>
-			)}
 		</Layout>
 	);
 };

@@ -75,8 +75,13 @@ const PageApplications = () => {
                 {applications.map((elem: any) => (
                     <li key={elem.id} className={styles.infoList}>
                         <div className={styles.blockInfo}>
-                            <h2 className={styles.name}>{elem.name}</h2>
-                            <p className={styles.email}>{elem.email}</p>
+                            <h2 className={styles.name}>Имя: {elem.name}</h2>
+                            <p className={styles.email}>Email: {elem.email}</p>
+                            <div className={styles.nameCategories}>Название: {elem.Book.title}</div>
+                            <div className={styles.nameProduct}>Автор: {elem.Book.author}</div>
+                            <div className={styles.nameProduct}>Год: {elem.Book.publication_year}</div>
+                            <div className={styles.nameProduct}>Описание: {elem.Book.description}</div>
+                            <div className={styles.nameProduct}>Цена: {elem.Book.price}</div>
                             <div className={styles.checboxInfo}>
                                 <div className={styles.checboxBlock}>
                                     <input type='checkbox' name='processed' checked={elem.processed}

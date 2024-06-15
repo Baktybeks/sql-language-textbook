@@ -7,24 +7,23 @@ import styles from './TheAddAplication.module.scss';
 
 interface Props {
     name: string;
-    phone: string;
-    paymentMethod: string;
-    delivery: boolean;
+    email: string;
+    BookId: number;
     processed: boolean;
 }
 
 interface PropsActive {
     onActive: (value: boolean) => void;
     active: boolean;
+    idAplication: number;
 }
 
-const TheAddAplication = ({onActive, active}: PropsActive) => {
+const TheAddAplication = ({onActive, active, idAplication}: PropsActive) => {
     const session = useSession();
     const [newDirection, setNewDirection] = useState<Props>({
         name: '',
-        phone: '',
-        paymentMethod: '',
-        delivery: false,
+        email: '',
+        BookId: idAplication,
         processed: false,
     });
 
@@ -45,9 +44,8 @@ const TheAddAplication = ({onActive, active}: PropsActive) => {
         try {
             const formData = new FormData();
             formData.append('name', newDirection.name);
-            formData.append('phone', newDirection.phone);
-            formData.append('paymentMethod', newDirection.paymentMethod);
-            formData.append('delivery', newDirection.delivery.toString());
+            formData.append('email', newDirection.email);
+            formData.append('BookId', idAplication.toString());
             formData.append('processed', newDirection.processed.toString());
 
             const response = await fetch('http://localhost:5000/api/application/', {
@@ -76,26 +74,9 @@ const TheAddAplication = ({onActive, active}: PropsActive) => {
                                    placeholder='Имя' onChange={handleChange}/>
                         </div>
                         <div className={styles.inputForm}>
-                            <label className={styles.textInput}>Телефон:</label>
-                            <input type='tel' name='phone' value={newDirection.phone} className={styles.inputs}
-                                   placeholder='телефон' onChange={handleChange}/>
-                        </div>
-                        <div className={styles.inputForm}>
-                            <label className={styles.textInput}>Оплата:</label>
-                            <select className={styles.inputs} name="paymentMethod" value={newDirection.paymentMethod}
-                                    onChange={handleChange}>
-                                <option className={styles.oprions} value="Банки"></option>
-                                <option className={styles.oprions} value="Мбанк">Мбанк</option>
-                                <option className={styles.oprions} value="Элкарт">Элкарт</option>
-                                <option className={styles.oprions} value="Viza">Viza</option>
-                            </select>
-                        </div>
-                        <div className={styles.checboxInfo}>
-                            <input type='checkbox' name='delivery' value={'true'} className={styles.inputs}
-                                   onChange={handleChange}/>
-                            <p className={styles.textInput}>
-                                Доставка
-                            </p>
+                            <label className={styles.textInput}>Email:</label>
+                            <input type='email' name='email' value={newDirection.email} className={styles.inputs}
+                                   placeholder='email' onChange={handleChange}/>
                         </div>
                         <div className={styles.checboxInfo}>
                             <div>

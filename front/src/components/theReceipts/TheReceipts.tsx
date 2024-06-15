@@ -4,7 +4,13 @@ import React, {useEffect, useState} from 'react'
 import Link from "next/link";
 import styles from './TheReceipts.module.scss'
 
-const TheReceipts = () => {
+interface Props {
+    onActive: (value: boolean) => void;
+    active: boolean;
+    setIdAplication:(value: number) => void;
+}
+
+const TheReceipts = ({setIdAplication, active, onActive}: Props) => {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -20,6 +26,12 @@ const TheReceipts = () => {
         fetchData()
     }, [])
 
+
+    const handleChangeActive = (id: number) => {
+        setIdAplication(id)
+        onActive(!active);
+    }
+
     return (
         <>
             <div className={styles.blockSlider}>
@@ -27,7 +39,7 @@ const TheReceipts = () => {
                             {data.map((elem: any) => (
                                 <div key={elem.id} className={styles.blockAdd}>
                                     <div>
-                                        <img src={`http://localhost:5000/${elem.image}`} alt='tower' className={styles.imgesLocation}/>
+                                        <img src={`http://localhost:5000/${elem.image}`} alt='img' className={styles.imgesLocation}/>
                                     </div>
                                     <div className={styles.textLocation}>
                                         <h2 className={styles.nameBool}>Featured book</h2>
@@ -38,7 +50,7 @@ const TheReceipts = () => {
                                             amet, libero ipsum enim pharetra hac.
                                         </p>
                                         <div className={styles.price}>$ {elem.price}</div>
-                                        <Link className={styles.textLink} href='#'>View more</Link>
+                                        <button className={styles.textLink} onClick={() => handleChangeActive(elem.id)}>Подать заявку</button>
                                     </div>
                                 </div>
                             ))}

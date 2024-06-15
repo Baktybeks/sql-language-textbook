@@ -1,6 +1,6 @@
 .componentApplication {
   width: 500px;
-  height: 430px;
+  height: auto;
   padding: 24px;
 }
 
@@ -32,17 +32,17 @@
 }
 
 .submit {
-  width: 50%;
   display: grid;
   place-items: center;
-  height: 34px;
-  background: rgba(241, 89, 43, 1);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 14px;
-  color: #fff;
-  border: none;
-  margin-top: 16px;
+  width: 133px;
+  height: 61px;
+  border-radius: 7px;
+  border: 1px solid #393280;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35.2px;
+  letter-spacing: 0.1em;
+  color: #393280;
 }
 
 .warning, .textInput {
