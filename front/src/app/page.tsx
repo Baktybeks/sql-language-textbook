@@ -12,67 +12,72 @@ import classNames from 'classnames';
 import Layout from "@/components/layout/Layout";
 
 interface FormData {
-	option?: string;
-	date?: Date;
+    option?:string;
+    date?:Date;
 }
 
 interface DataItem {
-	option: string;
-	date: string;
+    option:string;
+    date:string;
 }
 
-const Home: React.FC = () => {
-	const [active, setActive] = useState(false);
-	const [idAplication, setIdAplication] = useState<number>(0);
-	const [formData, setFormData] = useState<FormData>({});
-	const [data, setData] = useState<DataItem[]>([]);
+const Home:React.FC = () => {
+    const [ active, setActive ] = useState(false);
+    const [ idAplication, setIdAplication ] = useState<number>(0);
+    const [ formData, setFormData ] = useState<FormData>({});
+    const [ data, setData ] = useState<DataItem[]>([]);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await fetch('http://localhost:5000/api/rent');
-			if (!response.ok) {
-				throw new Error('Unable to fetch posts!');
-			}
-			const jsonData = await response.json();
-			setData(jsonData);
-		};
+    useEffect(() => {
+        const fetchData = async() => {
+            const response = await fetch('http://localhost:5000/api/rent');
+            if (!response.ok) {
+                throw new Error('Unable to fetch posts!');
+            }
+            const jsonData = await response.json();
+            setData(jsonData);
+        };
 
-		fetchData();
-	}, []);
+        fetchData();
+    }, []);
 
-	return (
-		<Layout Header='home'>
-			<div className={classNames(styles.shadow, {[styles.shadowNot]: !active})} onClick={() => setActive(!active)}></div>
-			<div className={classNames(styles.application, {[styles.applicationNot]: !active})}>
-				<TheAddAplication onActive={setActive} active={active} idAplication={idAplication}/>
-			</div>
-				<>
-					<section className={styles.wrapperOpenWorld}>
-						<TheOpenWorld/>
-					</section>
-					<section className={styles.wrapperCriteria}>
-						<TheCriteria />
-					</section>
-					<section className={styles.wrapperReceipts}>
-						<TheReceipts setIdAplication={setIdAplication} onActive={setActive} active={active}/>
-					</section>
-					<section className={styles.wrapperBooksSold}>
-						<TheBooksSold />
-					</section>
-					<section className={styles.wrapperBooksSold}>
-						<iframe
-							height="100%"
-							width="100%"
-							src="https://player.vimeo.com/video/76979871"
-							title="Vimeo video player"
-							frameBorder="0"
-							allowFullScreen
-							loading="lazy"
-						></iframe>
-					</section>
-				</>
-		</Layout>
-	);
+    function getYoutubeVideoId(url) {
+        const match = url.match(/youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})|youtu\.be\/([a-zA-Z0-9_-]{11})/);
+        return match ? match[ 1 ] || match[ 2 ] : null;
+    }
+
+    return (
+        <Layout Header='home'>
+            <div className={ classNames(styles.shadow, { [ styles.shadowNot ]: !active }) }
+                 onClick={ () => setActive(!active) }></div>
+            <div className={ classNames(styles.application, { [ styles.applicationNot ]: !active }) }>
+                <TheAddAplication onActive={ setActive } active={ active } idAplication={ idAplication }/>
+            </div>
+            <>
+                <section className={ styles.wrapperOpenWorld }>
+                    <TheOpenWorld/>
+                </section>
+                <section className={ styles.wrapperCriteria }>
+                    <TheCriteria/>
+                </section>
+                <section className={ styles.wrapperReceipts }>
+                    <TheReceipts setIdAplication={ setIdAplication } onActive={ setActive } active={ active }/>
+                </section>
+                <section className={ styles.wrapperBooksSold }>
+                    <TheBooksSold/>
+                </section>
+                <iframe
+                    height="200"
+                    width="400"
+                    src="https://www.youtube.com/embed/2ZVHssr0WpY"
+                    // src={`https://www.youtube.com/embed/${getYoutubeVideoId(item?.url)}`}
+                    title="Vimeo video player"
+                    frameBorder="0"
+                    allowFullScreen
+                    loading="lazy"
+                ></iframe>
+            </>
+        </Layout>
+    );
 };
 
 export default Home;
