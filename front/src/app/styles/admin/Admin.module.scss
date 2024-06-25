@@ -211,6 +211,7 @@
 .addBooks {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -233,4 +234,12 @@
 .idgendr {
   padding: 3px;
   border: 1px solid #E5B300;
+}
+
+.textVideo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #393280;
+  line-height: 21px;
+  margin-top: 16px;
 }
