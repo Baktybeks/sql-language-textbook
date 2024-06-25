@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {useSession} from "next-auth/react";
 import styles from './TheAddAplication.module.scss';
 
@@ -26,6 +26,17 @@ const TheAddAplication = ({onActive, active, idAplication}: PropsActive) => {
         BookId: idAplication,
         processed: false,
     });
+    console.log(session,'session')
+    useEffect(() => {
+        if (session?.data?.user?.email) {
+            setNewDirection(prevState => ({
+                ...prevState,
+                // @ts-ignore
+                name: session?.data?.user.name ?? '',
+                email: session?.data?.user.email ?? '',
+            }));
+        }
+    }, [session]);
 
     const handleChange = (e: any) => {
         const {name, value} = e.target;
@@ -54,12 +65,14 @@ const TheAddAplication = ({onActive, active, idAplication}: PropsActive) => {
             });
 
             if (response.ok) {
-                console.log('добавлен объект');
+                alert('заявка отправлена');
             } else {
                 console.error('Ошибка при добавлении нового направления:', response.statusText);
             }
         } catch (error) {
             console.error('Ошибка при выполнении запроса:', error);
+        } finally {
+            handleChangeActive()
         }
     };
 
@@ -80,16 +93,14 @@ const TheAddAplication = ({onActive, active, idAplication}: PropsActive) => {
                         </div>
                         <div className={styles.checboxInfo}>
                             <div>
-                                <input type='checkbox' name='processed' value={'false'} required
+                                <input type='checkbox' name='processed' value={'false'} required id='checkbox'
                                        onChange={handleChange} className={styles.checkbox}/>
                             </div>
-                            <p className={styles.textInput}>
-                                Подтвердить покупку
-                            </p>
+                            <label className={styles.textInput} htmlFor='checkbox'>Подтвердить покупку</label>
                         </div>
                     </div>
                     {
-                        session?.data ? <button onClick={handleChangeActive} className={styles.submit}>Отправить</button> :
+                        session?.data ? <button className={styles.submit}>Отправить</button> :
                             <div className={styles.warning}>Для того что бы купить книгу вы должны
                                 авторизоваться</div>
                     }

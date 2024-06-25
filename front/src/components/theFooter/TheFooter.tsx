@@ -8,7 +8,7 @@ const TheFooter = () => {
 				<div className={styles.yslygi}>
 					<div className={styles.infoFooter}>
 						<div><LogoFooter/></div>
-						<p>4517 Washington Ave. <br/> Manchester, Kentucky 39495</p>
+						<p>г.Бишкек <br/> ул. Киевская 495</p>
 					</div>
 					<ul className={styles.tel}>
 						<li className={styles.textTel}>Телефон</li>

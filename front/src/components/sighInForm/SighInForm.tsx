@@ -28,7 +28,7 @@ const SighInForm = () => {
 			<div className={styles.inputForm}>
 				<label className={styles.labelText} htmlFor='email'>Логин</label>
 				<input className={styles.inputText}
-					   type='email' name='email' id='email' placeholder={'you@company.com'} required
+					   type='email' name='email' id='email' placeholder={'введите свою почту'} required
 				/>
 			</div>
 			<div className={styles.inputForm}>
@@ -41,7 +41,7 @@ const SighInForm = () => {
 				<input
 					type='checkbox' name='checkbox' id='checkbox' required
 				/>
-				<label className={styles.textCheckbox} htmlFor='password'>Запомнить меня</label>
+				<label className={styles.textCheckbox} htmlFor='checkbox'>Запомнить меня</label>
 			</div>
 			<div></div>
 			<button className={styles.btn} type='submit'>Войти</button>

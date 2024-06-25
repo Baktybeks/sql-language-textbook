@@ -49,11 +49,11 @@ const ApProfile = () => {
                     </ul>
                 {
                 applications
-                    .filter((elem: any) => session.data?.user?.name === elem.name)
+                    .filter((elem: any) => session.data?.user?.email === elem.email)
                     .map((elem: any, index: number) => {
                         return (
                             <ul key={elem.id} className={styles.list}>
-                                {session.data?.user?.name === elem.name && (
+                                {session.data?.user?.email === elem.email && (
                                     elem.processed === true ? (
                                         <li className={styles.ok}>Ваша заявка принята</li>
                                     ) : (
