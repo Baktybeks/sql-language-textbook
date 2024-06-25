@@ -51,6 +51,14 @@ model Books {
   updatedAt         DateTime        @updatedAt
 }
 
+model Videos {
+  id                Int             @id @default(autoincrement())
+  title             String
+  url               String
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+}
+
 enum Role {
   USER
   ADMIN

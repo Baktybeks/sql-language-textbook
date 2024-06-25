@@ -19,6 +19,12 @@ const Book = sequelize.define('Book', {
   price: { type: DataTypes.INTEGER, allowNull: false },
 });
 
+const Video = sequelize.define('Video', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  title: { type: DataTypes.STRING, allowNull: false },
+  url: { type: DataTypes.STRING, allowNull: false },
+});
+
 const TrainingBlock = sequelize.define('TrainingBlock', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   image: { type: DataTypes.STRING, allowNull: false },
@@ -40,7 +46,7 @@ Application.belongsTo(Book, { as: 'Book', foreignKey: 'BookId'});
 
 
 module.exports = {
-  User, Application, Book, TrainingBlock
+  User, Application, Book, TrainingBlock, Video
 };
 
 
