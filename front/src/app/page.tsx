@@ -59,6 +59,17 @@ const Home: React.FC = () => {
 					<section className={styles.wrapperBooksSold}>
 						<TheBooksSold />
 					</section>
+					<section className={styles.wrapperBooksSold}>
+						<iframe
+							height="100%"
+							width="100%"
+							src="https://player.vimeo.com/video/76979871"
+							title="Vimeo video player"
+							frameBorder="0"
+							allowFullScreen
+							loading="lazy"
+						></iframe>
+					</section>
 				</>
 		</Layout>
 	);
