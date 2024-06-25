@@ -1,0 +1,26 @@
+.nameHeadr {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 38.73px;
+  letter-spacing: 1.874286413192749px;
+  text-align: center;
+  color: #444444;
+  margin-bottom: 44px;
+}
+
+.blockVideo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.textVideo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #393280;
+  line-height: 21px;
+  margin-top: 16px;
+}

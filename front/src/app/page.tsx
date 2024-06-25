@@ -10,40 +10,11 @@ import TheAddAplication from "@/components/theAddAplication/TheAddAplication";
 import styles from './styles/Home/Home.module.scss';
 import classNames from 'classnames';
 import Layout from "@/components/layout/Layout";
-
-interface FormData {
-    option?:string;
-    date?:Date;
-}
-
-interface DataItem {
-    option:string;
-    date:string;
-}
+import TheVideo from "@/components/TheVideo/TheVideo";
 
 const Home:React.FC = () => {
     const [ active, setActive ] = useState(false);
     const [ idAplication, setIdAplication ] = useState<number>(0);
-    const [ formData, setFormData ] = useState<FormData>({});
-    const [ data, setData ] = useState<DataItem[]>([]);
-
-    useEffect(() => {
-        const fetchData = async() => {
-            const response = await fetch('http://localhost:5000/api/rent');
-            if (!response.ok) {
-                throw new Error('Unable to fetch posts!');
-            }
-            const jsonData = await response.json();
-            setData(jsonData);
-        };
-
-        fetchData();
-    }, []);
-
-    function getYoutubeVideoId(url) {
-        const match = url.match(/youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})|youtu\.be\/([a-zA-Z0-9_-]{11})/);
-        return match ? match[ 1 ] || match[ 2 ] : null;
-    }
 
     return (
         <Layout Header='home'>
@@ -65,16 +36,9 @@ const Home:React.FC = () => {
                 <section className={ styles.wrapperBooksSold }>
                     <TheBooksSold/>
                 </section>
-                <iframe
-                    height="200"
-                    width="400"
-                    src="https://www.youtube.com/embed/2ZVHssr0WpY"
-                    // src={`https://www.youtube.com/embed/${getYoutubeVideoId(item?.url)}`}
-                    title="Vimeo video player"
-                    frameBorder="0"
-                    allowFullScreen
-                    loading="lazy"
-                ></iframe>
+                <section className={ styles.wrapperBooksSold }>
+                    <TheVideo/>
+                </section>
             </>
         </Layout>
     );
