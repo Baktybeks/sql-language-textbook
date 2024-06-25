@@ -24,7 +24,7 @@ const TheBooksSold = () => {
             <div className={styles.blockSlider}>
                 <h2 className={styles.nameHeadr}>Подпишись на блоки SQL</h2>
                 <ul className={styles.blockList}>
-                    {data.map((elem: any) => (
+                    {data.slice(0, 4).map((elem: any) => (
                         <li
                             key={elem.id}
                             style={{ backgroundImage: `url(http://localhost:5000/${elem.image})` }}
