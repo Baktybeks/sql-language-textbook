@@ -125,7 +125,7 @@ const PageAdmin = () => {
             });
             if (response.ok) {
                 setBooks((book: any) => book.filter((app: any) => app.id !== index));
-                console.log('Объект удален')
+                alert('Объект удален')
             } else {
                 console.error('Ошибка при удалении направления:', response.statusText);
             }
@@ -141,7 +141,7 @@ const PageAdmin = () => {
             });
             if (response.ok) {
                 setVideo((book: any) => book.filter((app: any) => app.id !== index));
-                console.log('Объект удален')
+                alert('Объект удален')
             } else {
                 console.error('Ошибка при удалении направления:', response.statusText);
             }
@@ -157,7 +157,7 @@ const PageAdmin = () => {
             });
             if (response.ok) {
                 setTraining((book: any) => book.filter((app: any) => app.id !== index));
-                console.log('Объект удален')
+                alert('Объект удален')
             } else {
                 console.error('Ошибка при удалении направления:', response.statusText);
             }
@@ -190,6 +190,7 @@ const PageAdmin = () => {
                 }
                 const jsonData = await res.json();
                 setBooks(jsonData);
+                alert("Книга успешно добавлена")
 
                 console.log('добавлен объект');
             } else {
@@ -221,6 +222,7 @@ const PageAdmin = () => {
                 }
                 const jsonData = await res.json();
                 setTraining(jsonData);
+                alert("Услуга успешно добавлена")
 
                 console.log('добавлен объект');
             } else {
@@ -250,7 +252,8 @@ const PageAdmin = () => {
                     throw new Error('Unable to fetch directions!');
                 }
                 const jsonData = await res.json();
-                setTraining(jsonData);
+                setVideo(jsonData);
+                alert("Видео успешно добавлена")
 
                 console.log('добавлен объект');
             } else {
