@@ -37,3 +37,9 @@
   letter-spacing: 0.1em;
   color: #393280;
 }
+
+.blockLink {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}

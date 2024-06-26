@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './File.module.scss';
+import Link from "next/link";
 
 const File = () => {
     return (
@@ -10,6 +11,7 @@ const File = () => {
                 книга "Основы и Продвинутые Техники SQL" – именно то, что вам нужно! Эта книга подходит как для
                 начинающих, так и для опытных пользователей, желающих улучшить свои знания и навыки.
             </p>
+            <div className={styles.blockLink}>
             <a
                 href="/Book/SQL.pdf"
                 download="SQL"
@@ -19,6 +21,10 @@ const File = () => {
             >
                 Скачать книгу
             </a>
+                <Link href={"/bookRead"} className={styles.textLink}>
+                    Прочесть книгу
+                </Link>
+            </div>
         </div>
     );
 };
